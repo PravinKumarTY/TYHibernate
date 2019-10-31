@@ -1,0 +1,128 @@
+ORM:
+  >ORM is a kind of persistance software it acts like bridge between java application and DB. and transform data in the form of object.
+  >When we work with object oriented system there is mis match between object model and relational model.
+  >RDBMS represent data in a tabular format where object  oriented language represent in an object.
+  
+JPA with Hibernate
+  >JPA stands for java persitance Api which it is use to persist data between java object and Relational database.
+  >it provided by sun microsystem.JPA specification can be used to perform persistance operation in enterprise application
+    by following ORM rules and Regulations.
+  >Popular JPA implementaions are
+   1.Hibernate
+   2.Eclipse link
+   3.open jsp.   
+  >JPA is set of Rules and regulations and Hibernate implemets all rules and regulations of JPA.  
+  
+  Steps to create Hibernate application.
+   1.Create java project.
+   2.Create Entity class(pojo class):The main purpose of entity class is to store the data which we want to store the data into database
+   3.create entity mapping file:the main intention entity mapping file is to provide mapping between Entity class and database table(Write all Annotations).
+                          Xml mapping:This another way to map Entity class to database.
+   4.create jpa config file(persistant.xml) file
+     src/main/resource insisde create one folder META-INF insisde that create a file persistence.xml 
+	 >persistence is root tag.
+	   >This file is present int src/main/resource folder insisde that one META-INF folder insisde META-INF create persistence.xml file.
+	   >In persistence.xml we write all the Db related information insisde properties tag.
+	 >we can keep one or more then one p  
+   5.create a test application(all neccessary code)
+   
+      eg.
+        EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("TestPersistence");//to load the all the db related information.
+		EntityManager entityManager=entityManagerFactory.createEntityManager();//EntityManager is used to perform crud operation
+		EntityTransaction transaction=entityManager.getTransaction();
+		transaction.begin();
+		entityManager.persist(movie);
+		System.out.println("Saved");
+		transaction.commit();
+		
+		persist(object):it store the entity object to database.
+		find(Class.class,primary key):to find record 
+		  >it hit the database 
+		  >it return object object entity class.
+		  >if  no record  found then it throw NullPointerException.
+		  >It has less performance
+		  >It is Eger loading 
+		getReference(Movie.class,1000)
+		  >It does not hit the database but when we try to use DB then it hit the data base.
+		  >it return proxy object.
+		  >if  no record  found then it throw NoObjectFoundException. 
+		  >it has good performance
+		  >It is lazy loading.
+		remove(object):to remove record.
+		
+	>The EntryManagerFactory is an interface present in javax.persistence pkg. is use to provide an Entity manager.it heavy weightobject thread safe object.
+     and for single or each persistence unit only instance of Factory is created.
+    >There will be only one factory createed for persistence unit but multiple factory each against single persistence unit.
+	  eg..
+	    EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("TestPersistence");
+    >	Persistence is bootstrap class which is use to create EntityManagerFactory object.
+	>the role createEntityManagerFactory() method is to create  and return EntityManagerFactory.this contains the name persistance unit passed in pesistence.xml file.
+	
+	
+	EntityManager:
+	   >It manage the life cycle of our entities.
+	   >It use to intract with database to work with entities.
+	   >Syntax to create EntityManager.
+	     EntityManager entityManager=entityManagerFactory.createEntityManager();
+	   >invoke the createEntityManager() on entityManagerFactory .	 
+	   
+	Life cycle of JPA:
+              
+         Transient(new)-------------->Persistence Context(Persistence and Remove)------------------------->detached	
+		
+     Transient:Object consructed with new operator that is not associated with any BD row.
+     Persistence Context:An Entity instance that associated with DB a row and contains with in a context Persistence.
+     Remove:An object schedule for deletion.
+     detached:object reference to an entity once associated with a close persistance context.	 
+	 
+	 
+JPQL(Java persistence Query Language):
+    >It is an object oriented Query language.Which is use to perform DB operation on persistance entities.
+     Instead of DB table JPQL uses object.	
+	>Creating Query in JPQL:
+    >There ia a method present in EntityManager ir createQuery(query) there pass our query.	
+	>It is not DB related .It is related to entity class.
+	>Query interface has some method
+	  1.executeUpdate()
+	  2.getResultList()
+	  3.getSingleResult()
+	  
+Mapping :
+    >In hibernate everything are in object so the class who are representing are also should be in relationship.
+    >If Db tablles are place  in relationship a then the class that are representing those DB table should also be in  
+	relationship 
+	>Types of Relationship:
+	  1.One to One
+	  2.One to Many
+	  3.Many to One
+	  4.Many to Many
+	     >Hibernate support two mode of association mapping Unidirectional and Bidirectional.
+		 
+		 
+		 
+Code Review
+   |
+   Self----(Sonar lint)
+   peer---(Crucible)
+   Management---(Sonal Qube)   
+   
+Git Repository Name
+    Testyantra-JFS-B1-Name   
+	
+ShortsCut 
+   control+l:move to particular line
+   control+shift+/:to comment multilple lines
+   control+shift+\:to uncomment
+   control+d:to delete a line 
+   control+f4:to close a file 
+   control+shift+f4:to close all files
+   control+shift+j:to add javadoc comment.
+   control+B:to build All
+   control+i:to correct identation.
+   control+space:contet assist
+      
+		 
+	  
+		 
+	   
+   

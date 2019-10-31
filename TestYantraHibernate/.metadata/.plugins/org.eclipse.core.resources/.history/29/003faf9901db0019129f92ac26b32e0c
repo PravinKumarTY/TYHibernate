@@ -1,0 +1,5 @@
+package com.tyss.musicapp.dao;
+
+public class MusicDaoImpl {
+
+}

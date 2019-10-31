@@ -1,0 +1,12 @@
+package com.tyss.bean;
+
+public class SongBean {
+	private int id;
+	private String songTitle;
+	private String albumName;
+	private String songLocation;
+	private String artistName;
+	private String description;
+	
+
+}

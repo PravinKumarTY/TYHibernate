@@ -1,0 +1,5 @@
+package com.testyantra.dto;
+
+public class Student {
+
+}

@@ -1,0 +1,30 @@
+package com.tyss.onetoone;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="voter_id")
+public class VoterIdCard {
+	@Id
+	@Column
+	@OneToOne(mappedBy="voterId")
+	private int vid;
+	@Column
+	private String idName;
+	public int getVid() {
+		return vid;
+	}
+	public void setVid(int vid) {
+		this.vid = vid;
+	}
+	public String getIdName() {
+		return idName;
+	}
+	public void setIdName(String idName) {
+		this.idName = idName;
+	}
+}

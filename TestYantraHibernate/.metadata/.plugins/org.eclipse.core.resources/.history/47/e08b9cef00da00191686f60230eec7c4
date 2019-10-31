@@ -1,0 +1,10 @@
+package com.tyss.jpaquery;
+
+public class UpdateJpaQuery {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

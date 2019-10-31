@@ -1,0 +1,9 @@
+package com.tyss.jpatestapp;
+
+public class AppDeleteData {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.tyss.jpatestapp;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.tyss.jpatest.dto.Movie;
+
+public class AppUpdateData {
+
+	public static void main(String[] args) {
+		EntityManagerFactory entityManagerFactory=null;
+		EntityManager entityManager=null;
+		EntityTransaction transaction=null;
+		try {
+			entityManagerFactory=Persistence.createEntityManagerFactory("TestPersistence");
+			entityManager=entityManagerFactory.createEntityManager();
+			transaction=entityManager.getTransaction();
+			Movie movie=entityManager.find(Movie.class,1001);
+			transaction.begin();
+			movie.setName("kkh");
+			transaction.commit();	
+			System.out.println("Updated..");
+		} catch (Exception e) {
+			transaction.rollback();
+			e.printStackTrace();
+		}finally {
+			entityManager.close();
+		}
+	}
+}

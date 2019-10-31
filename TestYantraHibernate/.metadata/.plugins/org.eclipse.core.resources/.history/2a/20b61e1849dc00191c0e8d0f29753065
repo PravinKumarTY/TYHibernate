@@ -1,0 +1,8 @@
+package com.tyss.gmail.dao;
+
+import com.tyss.gmail.dto.AccountDto;
+
+public interface AccountDao {
+	public boolean registerUser(AccountDto accountDto);
+	public boolean loginUser(String email,String password);
+}

@@ -1,0 +1,37 @@
+package com.tyss.mapping.app;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.tyss.onetoone.Person;
+import com.tyss.onetoone.VoterIdCard;
+
+public class OneToOneApp {
+
+	public static void main(String[] args) {
+		Person person=new Person();
+		person.setId(1000);
+		person.setName("Pravin kumar");
+		person.setAddress("Btm");
+		
+		VoterIdCard voterId=new VoterIdCard();
+		voterId.setVid(100000);
+		voterId.setIdName("VoterId");
+		person.setVoterId(voterId);
+		
+		EntityManagerFactory emf=null;
+		EntityManager em=null;
+		EntityTransaction transaction=null;
+		try {
+			emf=Persistence.createEntityManagerFactory("TestPersistence");
+			em=emf.createEntityManager();
+			transaction=em.getTransaction();
+		} catch (Exception e) {
+			transaction.rollback();
+		}finally {
+			em.close();
+		}
+	}
+}

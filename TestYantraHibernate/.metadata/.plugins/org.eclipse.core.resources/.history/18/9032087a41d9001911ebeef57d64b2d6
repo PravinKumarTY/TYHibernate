@@ -1,0 +1,10 @@
+package com.div.testyantra.app;
+
+public class StudentUpdateApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.tyss.musicapp.dto;
+
+public class MusicDto {
+
+}

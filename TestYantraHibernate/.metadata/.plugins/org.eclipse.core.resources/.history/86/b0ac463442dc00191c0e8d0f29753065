@@ -1,0 +1,5 @@
+package com.tyss.gmail.dto;
+
+public class AccountDto {
+
+}

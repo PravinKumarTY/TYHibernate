@@ -1,0 +1,17 @@
+package com.tyss.gmail.main;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class GmailMainTest {
+
+	public static void main(String[] args) {
+		try {
+			BufferedReader input=new BufferedReader(new InputStreamReader(System.in));
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+      
+	}
+}

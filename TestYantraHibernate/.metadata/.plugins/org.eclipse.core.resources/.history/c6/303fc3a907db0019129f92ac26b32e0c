@@ -1,0 +1,26 @@
+package com.tyss.musicapp.testapp;
+
+import com.tyss.musicapp.dao.MusicDAO;
+import com.tyss.musicapp.dao.MusicDaoImpl;
+import com.tyss.musicapp.dto.MusicDto;
+
+public class MusicTestClass {
+
+	public static void main(String[] args) {
+		MusicDAO musicDao=new MusicDaoImpl();
+		
+		MusicDto music=new MusicDto();
+		music.setSongId(1);
+		music.setSongTitle("Dil toh pagal hai");
+		music.setAlbumName("Dil toh pagal hai");
+		music.setArtistName("Udit Narayan");
+		music.setSongLocation("Bollywood");
+		music.setDescription("This is old hit song");
+		boolean b=musicDao.createMusic(music);
+		if(b) {
+			System.out.println("Music Created..");
+		}else {
+			System.out.println("Music Not Created.");
+		}
+	}
+}

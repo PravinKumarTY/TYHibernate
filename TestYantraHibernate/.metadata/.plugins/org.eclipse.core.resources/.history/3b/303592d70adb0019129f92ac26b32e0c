@@ -1,0 +1,8 @@
+package com.tyss.musicapp.dao;
+
+import com.tyss.musicapp.dto.MusicDto;
+
+public interface MusicDAO {
+	public boolean createMusic(MusicDto music);
+	public boolean updateMusic(MusicDto music);
+}
